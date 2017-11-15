@@ -13,9 +13,11 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			if($text = $event['message']['text'] == "สวัสดี")
-			$text = "สวัสดีควยไร";
-			else
-			$text = $event['message']['text'];			
+			$text = "ว่า";
+			else if($text = $event['message']['text'] == "ยังไม่ได้นอน")
+			$text = "https://www.youtube.com/watch?v=2A2bghaygv4";
+			//else
+			//$text = $event['message']['text'];			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
