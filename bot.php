@@ -18,9 +18,21 @@ if (!is_null($events['events'])) {
 			$text = "https://www.youtube.com/watch?v=2A2bghaygv4";
 			//else
 			//$text = $event['message']['text'];			
-			// Get replyToken
+			else if($text = $event['message']['text'] == "กินแฟไหนดี" || $text = $event['message']['text'] == "แฟ"){
+				$r = rand(1,4); 
+				switch ($favcolor) { 
+					case "1": $text = "growupcafe"; break; 
+					case "2": $text = "ธรรมดา แสนพิเศษ "; break; 
+					case "3": $text = "GRIM"; break; 
+					case "4": $text = "Galactose"; break; 
+					default: $text = "หาร้านใหม่ ๆ บ้าง"; 
+				}
+				
+			}
+
 			else
 			$text = "สรุปว่าไงนะ";
+			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
