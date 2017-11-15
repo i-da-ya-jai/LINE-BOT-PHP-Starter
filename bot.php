@@ -19,6 +19,8 @@ if (!is_null($events['events'])) {
 			//else
 			//$text = $event['message']['text'];			
 			// Get replyToken
+			else
+			$text = "สรุปว่าไงนะ";
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
