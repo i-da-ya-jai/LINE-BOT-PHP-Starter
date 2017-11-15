@@ -19,7 +19,13 @@ if (!is_null($events['events'])) {
 			//else
 			//$text = $event['message']['text'];			
 			else if($text = $event['message']['text'] == "กินแฟไหนดี" || $text = $event['message']['text'] == "แฟ"){
-				$r = rand(1,4); 
+				$actions = array ( New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ใช่", "ans=y"), 
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่", "ans=N") ); 
+				
+				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("ต้องการให้หาร้านกาแฟใช่ไหม ?", $actions); 
+				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ต้องการ ?", $button); 
+				$response = $bot->replyMessage($event->getReplyToken(), $outputText);
+				$r = rand(1,5); 
 				switch ($r) { 
 					case "1": $text = "growupcafe"; break; 
 					case "2": $text = "ธรรมดา แสนพิเศษ "; break; 
