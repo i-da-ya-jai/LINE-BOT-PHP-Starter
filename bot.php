@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			//$text = $event['message']['text'];			
 			else if($text = $event['message']['text'] == "กินแฟไหนดี" || $text = $event['message']['text'] == "แฟ"){
 				$r = rand(1,4); 
-				switch ($favcolor) { 
+				switch ($r) { 
 					case "1": $text = "growupcafe"; break; 
 					case "2": $text = "ธรรมดา แสนพิเศษ "; break; 
 					case "3": $text = "GRIM"; break; 
