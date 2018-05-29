@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 			}
 
 			else
-			$text = "สรุปว่าไงนะ";
+			//$text = "สรุปว่าไงนะ";
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
